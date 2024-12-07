@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Detail</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .recipe-detail-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #2e7d32;
+            margin-bottom: 20px;
+        }
+
+        .recipe-detail {
+            margin-bottom: 20px;
+        }
+
+        .recipe-detail h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .recipe-detail p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        button, .btn-secondary {
+            background-color: #2e7d32;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 48%;
+        }
+
+        button:hover, .btn-secondary:hover {
+            background-color: #1c5e24;
+        }
+
+        .btn-secondary {
+            background-color: #aaa;
+            text-decoration: none;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<div class="recipe-detail-container">
+
+    <h1 th:text="${recipe.name}"></h1>
+
+    <div class="recipe-detail">
+        <h2>Ingredients:</h2>
+        <p th:text="${recipe.ingredients}"></p>
+        <h2>Instructions:</h2>
+        <p th:text="${recipe.instructions}"></p>
+    </div>
+
+    <div class="button-container">
+        <!-- Edit Recipe Button -->
+        <a href="/recipe/edit/{id}" th:href="@{/recipe/edit/{id}(id=${recipe.id})}" class="btn-secondary">Edit Recipe</a>
+
+        <a href="/recipes" class="btn-secondary">Back to Recipes</a>
+    </div>
+</div>
+</body>
+</html>

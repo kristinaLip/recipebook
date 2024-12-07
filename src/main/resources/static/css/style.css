@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* colors and background */
+:root {
+    --main-green: #2e7d32; /* Nová tmavozelená */
+    --light-green: #80e27e; /* Svetlozelená */
+    --dark-green: #388e3c; /* Tmavozelená */
+    --white: #ffffff;
+    --background-color: #f9f9f9;
+}
+
+body {
+    background-color: var(--background-color);
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* title */
+h1 {
+    color: var(--main-green);
+    font-size: 3rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.recipe-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    justify-items: center;
+}
+
+
+.card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+}
+
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+
+.card h3 {
+    font-size: 1.5rem;
+    color: var(--main-green);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.return-home-btn {
+    display: block;
+    background-color: var(--main-green);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 40px auto;
+    width: 200px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.return-home-btn:hover {
+    background-color: var(--dark-green);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    padding-top: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
